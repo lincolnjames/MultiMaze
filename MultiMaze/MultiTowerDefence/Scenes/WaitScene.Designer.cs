@@ -1,13 +1,13 @@
-﻿namespace MazeClient
+namespace MazeClient
 {
     partial class WaitScene
     {
-        /// <summary>
+        /// <summary> 
         /// 필수 디자이너 변수입니다.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// 사용 중인 모든 리소스를 정리합니다.
         /// </summary>
         /// <param name="disposing">관리되는 리소스를 삭제해야 하면 true이고, 그렇지 않으면 false입니다.</param>
@@ -20,138 +20,218 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form 디자이너에서 생성한 코드
+        #region 구성 요소 디자이너에서 생성한 코드
 
-        /// <summary>
+        /// <summary> 
         /// 디자이너 지원에 필요한 메서드입니다. 
         /// 이 메서드의 내용을 코드 편집기로 수정하지 마세요.
         /// </summary>
         private void InitializeComponent()
         {
-            PicPlayer1 = new PictureBox();
+            button1 = new Button();
+            label1 = new Label();
             BtnStart = new Button();
             BtnReady = new Button();
             BtnLeave = new Button();
-            lblPlayer1 = new Label();
-            lblPlayer2 = new Label();
             PicPlayer2 = new PictureBox();
-            button1 = new Button();
-            ((System.ComponentModel.ISupportInitialize)PicPlayer1).BeginInit();
+            Player1 = new Label();
+            Player2 = new Label();
+            Player4 = new Label();
+            PicPlayer1 = new PictureBox();
+            Player3 = new Label();
+            PicPlayer4 = new PictureBox();
+            PicPlayer3 = new PictureBox();
+            RtbChat = new RichTextBox();
+            BtnSend = new Button();
             ((System.ComponentModel.ISupportInitialize)PicPlayer2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PicPlayer1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PicPlayer4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PicPlayer3).BeginInit();
             SuspendLayout();
             // 
-            // PicPlayer1
+            // button1
             // 
-            PicPlayer1.Location = new Point(202, 196);
-            PicPlayer1.Margin = new Padding(3, 4, 3, 4);
-            PicPlayer1.Name = "PicPlayer1";
-            PicPlayer1.Size = new Size(29, 32);
-            PicPlayer1.TabIndex = 0;
-            PicPlayer1.TabStop = false;
+            button1.Location = new Point(563, 43);
+            button1.Margin = new Padding(2);
+            button1.Name = "button1";
+            button1.Size = new Size(124, 22);
+            button1.TabIndex = 0;
+            button1.Text = "4번 화면 이동";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(328, 9);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(54, 15);
+            label1.TabIndex = 2;
+            label1.Text = "3번 화면";
             // 
             // BtnStart
             // 
-            BtnStart.Location = new Point(-2, 412);
-            BtnStart.Margin = new Padding(3, 4, 3, 4);
+            BtnStart.Location = new Point(0, 342);
             BtnStart.Name = "BtnStart";
-            BtnStart.Size = new Size(413, 152);
-            BtnStart.TabIndex = 1;
+            BtnStart.Size = new Size(359, 127);
+            BtnStart.TabIndex = 3;
             BtnStart.Text = "Start";
             BtnStart.UseVisualStyleBackColor = true;
             BtnStart.Click += BtnStart_Click;
             // 
             // BtnReady
             // 
-            BtnReady.Location = new Point(409, 412);
-            BtnReady.Margin = new Padding(3, 4, 3, 4);
+            BtnReady.Location = new Point(356, 342);
             BtnReady.Name = "BtnReady";
-            BtnReady.Size = new Size(389, 79);
-            BtnReady.TabIndex = 1;
-            BtnReady.Text = "Ready";
+            BtnReady.Size = new Size(359, 69);
+            BtnReady.TabIndex = 3;
+            BtnReady.Text = "준비";
             BtnReady.UseVisualStyleBackColor = true;
             BtnReady.Click += BtnReady_Click;
             // 
             // BtnLeave
             // 
-            BtnLeave.Location = new Point(409, 486);
-            BtnLeave.Margin = new Padding(3, 4, 3, 4);
+            BtnLeave.Location = new Point(356, 405);
             BtnLeave.Name = "BtnLeave";
-            BtnLeave.Size = new Size(389, 79);
-            BtnLeave.TabIndex = 1;
+            BtnLeave.Size = new Size(359, 64);
+            BtnLeave.TabIndex = 3;
             BtnLeave.Text = "나가기";
             BtnLeave.UseVisualStyleBackColor = true;
             BtnLeave.Click += BtnLeave_Click;
             // 
-            // lblPlayer1
-            // 
-            lblPlayer1.AutoSize = true;
-            lblPlayer1.Location = new Point(200, 310);
-            lblPlayer1.Name = "lblPlayer1";
-            lblPlayer1.Size = new Size(50, 15);
-            lblPlayer1.TabIndex = 2;
-            lblPlayer1.Text = "Player 1";
-            // 
-            // lblPlayer2
-            // 
-            lblPlayer2.AutoSize = true;
-            lblPlayer2.Location = new Point(556, 310);
-            lblPlayer2.Name = "lblPlayer2";
-            lblPlayer2.Size = new Size(46, 15);
-            lblPlayer2.TabIndex = 2;
-            lblPlayer2.Text = "Player2";
-            // 
             // PicPlayer2
             // 
-            PicPlayer2.Location = new Point(558, 196);
-            PicPlayer2.Margin = new Padding(3, 4, 3, 4);
+            PicPlayer2.Location = new Point(297, 56);
             PicPlayer2.Name = "PicPlayer2";
-            PicPlayer2.Size = new Size(29, 32);
-            PicPlayer2.TabIndex = 0;
+            PicPlayer2.Size = new Size(100, 86);
+            PicPlayer2.TabIndex = 4;
             PicPlayer2.TabStop = false;
             // 
-            // button1
+            // Player1
             // 
-            button1.Location = new Point(669, 252);
-            button1.Name = "button1";
-            button1.Size = new Size(108, 23);
-            button1.TabIndex = 3;
-            button1.Text = "4번화면 이동";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            Player1.AutoSize = true;
+            Player1.Location = new Point(159, 145);
+            Player1.Name = "Player1";
+            Player1.Size = new Size(46, 15);
+            Player1.TabIndex = 6;
+            Player1.Text = "Player1";
+            // 
+            // Player2
+            // 
+            Player2.AutoSize = true;
+            Player2.Location = new Point(328, 145);
+            Player2.Name = "Player2";
+            Player2.Size = new Size(46, 15);
+            Player2.TabIndex = 6;
+            Player2.Text = "Player2";
+            // 
+            // Player4
+            // 
+            Player4.AutoSize = true;
+            Player4.Location = new Point(328, 262);
+            Player4.Name = "Player4";
+            Player4.Size = new Size(46, 15);
+            Player4.TabIndex = 6;
+            Player4.Text = "Player4";
+            // 
+            // PicPlayer1
+            // 
+            PicPlayer1.Location = new Point(127, 56);
+            PicPlayer1.Name = "PicPlayer1";
+            PicPlayer1.Size = new Size(100, 86);
+            PicPlayer1.TabIndex = 4;
+            PicPlayer1.TabStop = false;
+            // 
+            // Player3
+            // 
+            Player3.AutoSize = true;
+            Player3.Location = new Point(159, 262);
+            Player3.Name = "Player3";
+            Player3.Size = new Size(46, 15);
+            Player3.TabIndex = 6;
+            Player3.Text = "Player3";
+            // 
+            // PicPlayer4
+            // 
+            PicPlayer4.Location = new Point(297, 175);
+            PicPlayer4.Name = "PicPlayer4";
+            PicPlayer4.Size = new Size(100, 84);
+            PicPlayer4.TabIndex = 4;
+            PicPlayer4.TabStop = false;
+            // 
+            // PicPlayer3
+            // 
+            PicPlayer3.Location = new Point(127, 175);
+            PicPlayer3.Name = "PicPlayer3";
+            PicPlayer3.Size = new Size(100, 84);
+            PicPlayer3.TabIndex = 4;
+            PicPlayer3.TabStop = false;
+            // 
+            // RtbChat
+            // 
+            RtbChat.Location = new Point(447, 70);
+            RtbChat.Name = "RtbChat";
+            RtbChat.Size = new Size(228, 245);
+            RtbChat.TabIndex = 7;
+            RtbChat.Text = "";
+            // 
+            // BtnSend
+            // 
+            BtnSend.Location = new Point(600, 313);
+            BtnSend.Name = "BtnSend";
+            BtnSend.Size = new Size(75, 23);
+            BtnSend.TabIndex = 8;
+            BtnSend.Text = "전송";
+            BtnSend.UseVisualStyleBackColor = true;
+            BtnSend.Click += BtnSend_Click;
             // 
             // WaitScene
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 562);
-            Controls.Add(button1);
-            Controls.Add(lblPlayer2);
-            Controls.Add(lblPlayer1);
+            ClientSize = new Size(739, 470);
+            Controls.Add(BtnSend);
+            Controls.Add(RtbChat);
+            Controls.Add(Player3);
+            Controls.Add(Player4);
+            Controls.Add(Player2);
+            Controls.Add(Player1);
+            Controls.Add(PicPlayer1);
+            Controls.Add(PicPlayer3);
+            Controls.Add(PicPlayer4);
+            Controls.Add(PicPlayer2);
             Controls.Add(BtnLeave);
             Controls.Add(BtnReady);
             Controls.Add(BtnStart);
-            Controls.Add(PicPlayer2);
-            Controls.Add(PicPlayer1);
-            Margin = new Padding(3, 4, 3, 4);
+            Controls.Add(label1);
+            Controls.Add(button1);
+            Margin = new Padding(2);
             Name = "WaitScene";
-            Text = "WaitScene";
-            //Load += WaitScene_Load;
-            ((System.ComponentModel.ISupportInitialize)PicPlayer1).EndInit();
             ((System.ComponentModel.ISupportInitialize)PicPlayer2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PicPlayer1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PicPlayer4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PicPlayer3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox PicPlayer1;
-        private System.Windows.Forms.Button BtnStart;
-        private System.Windows.Forms.Button BtnReady;
-        private System.Windows.Forms.Button BtnLeave;
-        private System.Windows.Forms.Label lblPlayer1;
-        private System.Windows.Forms.Label lblPlayer2;
-        private System.Windows.Forms.PictureBox PicPlayer2;
         private Button button1;
+        private Label label1;
+        private Button BtnStart;
+        private Button BtnReady;
+        private Button BtnLeave;
+        private PictureBox PicPlayer2;
+        private Label Player1;
+        private Label Player2;
+        private Label Player4;
+        private PictureBox PicPlayer1;
+        private Label Player3;
+        private PictureBox PicPlayer4;
+        private PictureBox PicPlayer3;
+        private RichTextBox RtbChat;
+        private Button BtnSend;
     }
 }
-
