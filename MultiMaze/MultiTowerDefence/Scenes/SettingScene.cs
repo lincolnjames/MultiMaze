@@ -51,7 +51,8 @@ namespace MazeClient
                 Manager.server.ConnectServer();
 
                 Manager.scene.ChangeGameState(this, Define.GameState.WaitScene);
-            } else
+            }
+            else
             {
                 MessageBox.Show("서버 연결 실패");
                 return;
@@ -61,6 +62,11 @@ namespace MazeClient
         private void cancelMakeRoomBtn_Click(object sender, EventArgs e)
         {
             Manager.scene.ChangeGameState(this, Define.GameState.MainScene);
+        }
+
+        private void SettingScene_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
