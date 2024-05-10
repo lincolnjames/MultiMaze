@@ -144,75 +144,80 @@ namespace MazeClient.Share
             return Math.Abs(last.X - now.X) + Math.Abs(last.Y - now.Y);
         }
     }
-    public class DFS : Algorithm
-{
-    private int map_size_x;
-    private int map_size_y;
-    private const bool WALL = false;
-    private const bool WAY = true;
+       public class DFS : Algorithm
+   {
+       private int map_size_x;
+       private int map_size_y;
+       private const bool WALL = false;
+       private const bool WAY = true;
 
-    public override List<Point> ToArray(Point startingPoint, Point endingPoint)
-    {
-        this.map_size_x = map.GetLength(0);
-        this.map_size_y = map.GetLength(1);
-        if (!IsinMapBounds(startingPoint) || !IsinMapBounds(endingPoint) || !IsPath(startingPoint) || !IsPath(endingPoint))
-            return null;
+       public override List<Point> ToArray(Point start, Point end)
+       {
+           this.map_size_x = map.GetLength(0);
+           this.map_size_y = map.GetLength(1);
 
-        return dfs(startingPoint, endingPoint);
-    }
+           if (!IsinMapBounds(start) || !IsinMapBounds(end) || !IsPath(start) || !IsPath(end))
+               return null;
 
-    private List<Point> dfs(Point startingPoint, Point endingPoint)
-    {
-        Stack<Point> explore = new Stack<Point>();
-        HashSet<Point> visitedPoints = new HashSet<Point>();
-        List<Point> visitedOrder = new List<Point>();
+           return dfs(start, end);
+       }
 
-        explore.Push(startingPoint);
-        visitedPoints.Add(startingPoint);
+       private List<Point> dfs(Point start, Point end)
+       {
+           Stack<List<Point>> explore = new Stack<List<Point>>();
+           HashSet<Point> visitedPoints = new HashSet<Point>();
 
-        while (explore.Count > 0)
-        {
-            Point currentPoint = explore.Pop();
+           List<Point> initialPath = new List<Point> { start };
+           explore.Push(initialPath);
+           visitedPoints.Add(start);
 
-            if (!visitedOrder.Contains(currentPoint))
-                visitedOrder.Add(currentPoint);
+           while (explore.Count > 0)
+           {
+               List<Point> currentPath = explore.Pop();
+               Point currentPoint = currentPath[currentPath.Count - 1];
 
-            foreach (Point adjacent in FindNeighbors(currentPoint))
-            {
-                if (IsPath(adjacent) && !visitedPoints.Contains(adjacent))
-                {
-                    explore.Push(adjacent);
-                    visitedPoints.Add(adjacent);
-                }
-            }
-        }
+               if (currentPoint.Equals(end))
+                   return currentPath;
 
-        return visitedOrder;
-    }
+               foreach (Point adjacent in FindNeighbors(currentPoint))
+               {
+                   if (IsPath(adjacent) && !visitedPoints.Contains(adjacent))
+                   {
+                       visitedPoints.Add(adjacent);
 
-    private bool IsinMapBounds(Point location)
-    {
-        return location.X >= 0 && location.X < map_size_x && location.Y >= 0 && location.Y < map_size_y;
-    }
+                       List<Point> newPath = new List<Point>(currentPath) { adjacent };
 
-    private bool IsPath(Point location)
-    {
-        // Accesses the external Map class's data
-        return map[location.X, location.Y] == WAY;
-    }
+                       explore.Push(newPath);
+                   }
+               }
+           }
 
-    private IEnumerable<Point> FindNeighbors(Point location)
-    {
-        Point[] directions = { new Point(1, 0), new Point(0, 1), new Point(-1, 0), new Point(0, -1) }; // 상 하 좌 우
+           return new List<Point>();
+       }
 
-        foreach (Point direction in directions)
-        {
-            Point adjacent = new Point(location.X + direction.X, location.Y + direction.Y);
-            if (IsinMapBounds(adjacent))
-                yield return adjacent;
-        }
-    }
-}
+       private bool IsinMapBounds(Point location)
+       {
+           return location.X >= 0 && location.X < map_size_x && location.Y >= 0 && location.Y < map_size_y;
+       }
+
+       private bool IsPath(Point location)
+       {
+           return map[location.X, location.Y] == WAY;
+       }
+
+       private IEnumerable<Point> FindNeighbors(Point location)
+       {
+           Point[] directions = { new Point(1, 0), new Point(0, 1), new Point(-1, 0), new Point(0, -1) };
+
+           foreach (Point direction in directions)
+           {
+               Point adjacent = new Point(location.X + direction.X, location.Y + direction.Y);
+
+               if (IsinMapBounds(adjacent))
+                   yield return adjacent;
+           }
+       }
+   }
 
     public class Astar : Algorithm
     {
